@@ -15,7 +15,6 @@ Suggests:
     knitr,
     rmarkdown,
     roxygen2 (>= 7.0.2),
-    testthat (>= 2.0.0),
-    Rcpp
+    testthat (>= 2.0.0)
 VignetteBuilder: knitr
 RoxygenNote: 7.0.2
