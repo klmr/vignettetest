@@ -1,0 +1,21 @@
+Package: vignettetest
+Title: Vignettes do not compile
+Version: 0.0.9000
+Author: Konrad Rudolph <konrad.rudolph@gmail.com>
+Maintainer: Konrad Rudolph <konrad.rudolph@gmail.com>
+Description: The subfolder containing the C++ source file in the vignette is
+    getting deleted during vignette build.
+Depends:
+    R (>= 3.5.0)
+License: Apache License (== 2.0)
+LazyData: true
+Encoding: UTF-8
+Suggests:
+    devtools,
+    knitr,
+    rmarkdown,
+    roxygen2 (>= 7.0.2),
+    testthat (>= 2.0.0),
+    Rcpp
+VignetteBuilder: knitr
+RoxygenNote: 7.0.2

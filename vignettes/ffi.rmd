@@ -1,0 +1,35 @@
+---
+title: "Foreign function interface"
+author: Konrad Rudolph
+vignette: >
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteIndexEntry{Foreign function interface}
+    %\VignetteEncoding{UTF-8}
+---
+```{r include=FALSE}
+devtools::load_all()
+
+file = file.path(getwd(), 'rcpp', 'convolve.cpp')
+cache_dir = normalizePath(file.path('~/tmp', 'vignettetest'))
+unlink(cache_dir, recursive = TRUE, force = TRUE)
+dir.create(cache_dir, recursive = TRUE)
+
+context = .Call('sourceCppContext', PACKAGE = 'Rcpp', file, NULL, TRUE, cache_dir, .Platform)
+
+setwd(context$buildDirectory)
+Sys.setenv(PKG_CPPFLAGS = Rcpp:::RcppCxxFlags())
+Sys.setenv(PKG_LIBS = Rcpp:::RcppLdFlags())
+
+cmd = sprintf(
+    '%s/R CMD SHLIB -o %s %s',
+    R.home('bin'),
+    shQuote(context$dynlibFilename),
+    shQuote(context$cppSourceFilename)
+)
+system(cmd)
+
+sopath = normalizePath(paste0(tools::file_path_sans_ext(file), '.so'), mustWork = FALSE)
+file.copy(context$dynlibPath, sopath)
+```
+
+Output at `r sopath`.
