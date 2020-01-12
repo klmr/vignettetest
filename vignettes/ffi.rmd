@@ -9,8 +9,7 @@ vignette: >
 ```{r include=FALSE}
 devtools::load_all()
 
-file = file.path(getwd(), 'rcpp', 'convolve.cpp')
-sopath = normalizePath(paste0(tools::file_path_sans_ext(file), '.so'), mustWork = FALSE)
+sopath = file.path(getwd(), 'rcpp', 'convolve.so')
 writeLines('foobar', sopath)
 ```
 
