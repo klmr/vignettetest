@@ -5,8 +5,6 @@ vignette: >
     %\VignetteEncoding{UTF-8}
 ---
 ```{r}
-devtools::load_all()
-
 newfile = file.path(getwd(), 'foo', 'bar')
 writeLines('bar', newfile)
 ```

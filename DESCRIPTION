@@ -3,8 +3,8 @@ Title: Vignettes do not compile
 Version: 0.0.9000
 Author: Konrad Rudolph <konrad.rudolph@gmail.com>
 Maintainer: Konrad Rudolph <konrad.rudolph@gmail.com>
-Description: The subfolder containing the C++ source file in the vignette is
-    getting deleted during vignette build.
+Description: Building the vignettes during checkign deletes a subfolder if a new
+    file is created inside it.
 Depends:
     R (>= 3.5.0)
 License: Apache License (== 2.0)
