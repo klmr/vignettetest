@@ -8,7 +8,3 @@ vignette: >
 newfile = file.path(getwd(), 'foo', 'baz')
 writeLines('baz', newfile)
 ```
-
-Output at `r newfile`:
-
-<pre>`r readLines(newfile)`</pre>
