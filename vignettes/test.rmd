@@ -1,18 +1,16 @@
 ---
-title: "Foreign function interface"
-author: Konrad Rudolph
 vignette: >
     %\VignetteEngine{knitr::rmarkdown}
     %\VignetteIndexEntry{Foreign function interface}
     %\VignetteEncoding{UTF-8}
 ---
-```{r include=FALSE}
+```{r}
 devtools::load_all()
 
-sopath = file.path(getwd(), 'rcpp', 'convolve.so')
-writeLines('foobar', sopath)
+newfile = file.path(getwd(), 'foo', 'bar')
+writeLines('bar', newfile)
 ```
 
-Output at `r sopath`:
+Output at `r newfile`:
 
-<pre>`r readLines(sopath)`</pre>
+<pre>`r readLines(newfile)`</pre>
